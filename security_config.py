@@ -63,6 +63,12 @@ ROUTE_LIMITS = {
     'encrypt': '5 per minute'
 }
 
-# SMTP Config (Env vars fallback)
-SMTP_USER = os.environ.get('SMTP_USER', 'chatterjeesreeya@gmail.com')
-SMTP_PASS = os.environ.get('SMTP_PASS', 'artr blif jkhq givi')
+# SMTP Config (Env vars for Render production)
+SMTP_SERVER = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')
+SMTP_PORT = int(os.environ.get('SMTP_PORT', 587))
+SMTP_USER = os.environ.get('SMTP_EMAIL', os.environ.get('SMTP_USER', 'chatterjeesreeya@gmail.com'))
+SMTP_PASS = os.environ.get('SMTP_PASSWORD', os.environ.get('SMTP_PASS', 'artr blif jkhq givi'))
+
+# Validation check for email service
+def is_email_configured():
+    return all([SMTP_SERVER, SMTP_PORT, SMTP_USER, SMTP_PASS])
