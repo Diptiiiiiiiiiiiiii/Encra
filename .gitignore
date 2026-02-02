@@ -1,8 +1,69 @@
+# =========================
+# Python
+# =========================
 __pycache__/
 *.pyc
+*.pyo
+
+# =========================
+# Environment & secrets
+# =========================
 .env
+.env.*
+*.key
+*.pem
+*.crt
+
+# =========================
+# Logs & databases
+# =========================
 *.log
 *.db
+*.sqlite
+*.sqlite3
+
+# =========================
+# Runtime data (DO NOT COMMIT)
+# =========================
+data/
+logs/
+instance/
+tmp/
+temp/
+
+# =========================
+# Encryption outputs
+# =========================
 *.enc
 *.ENC
+*.hash
+*.token
+*.bin
 
+# =========================
+# QR codes & generated files
+# =========================
+qr_*
+*.qr
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# =========================
+# JSON runtime files
+# =========================
+*.json
+
+# =========================
+# Node / tooling (if any)
+# =========================
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# =========================
+# Allow frontend static assets
+# =========================
+!static/
+!static/**
